@@ -1,0 +1,38 @@
+header {
+  background: #40bd63;
+  font-family: Sans-serif, Serif;
+  text-align: center;
+  height: 200px;
+}
+.title a {
+  text-decoration: none;
+  color: white;
+  font-size: 48px;
+}
+body {
+  font-family: sans-serif, Serif;
+  font-size: 24px;
+  text-align: center;
+}
+.box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 40%;
+  height: 50px;
+  background: orange;
+  color: white;
+}
+#detect-box-text {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#manual-box-container {
+  background: blue;
+}
+footer {
+  margin-top: 500px;
+}
