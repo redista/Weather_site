@@ -22,15 +22,26 @@
 				<div id="manual-box">
 					<div id="manual-box-text">Input your city and country</div>
 					<input id="manual-box-input" autocomplete="off" tabindex="1" type="text">
-					<div id="manual-box icon"></div>
+					<input id="manual-box-submit" type="button" onclick="call_API()" value="Go">
 				</div>
 			</div>
+			<section class="weather-result">
+				<p id="location"></p>
+				<p id="main-weather"></p>
+				<p id="weather-desc"></p>
+				<p id="temp"></p>
+			</section>
 		</main>	
 		<footer>
-			<a href="https://github.com/redista/Weather_site">Weather site GitHub repository</a>
-			<br>
-			<a href="about.html">Links to my contacts</a>
+			<div id="footer-text">
+				<h3> Info </h3>
+				<ul>
+					<li><a href="https://github.com/redista/Weather_site">Weather site GitHub repository</a></li>
+					<li><a href="https://github.com/redista/">Github account</a></li>
+					<li><a href="mailto:S00200671@mail.itsligo.ie?subject=Weather%20site">Email me</a></li>
+				</ul>
+			</div>
 		</footer>
-		<script type="text/javascript" src="test.js"></script>
+		<script type="text/javascript" src="API-com.js"></script>
 	</body>
 </html>
