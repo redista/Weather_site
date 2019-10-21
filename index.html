@@ -13,23 +13,14 @@
 		</header>
 		<main>
 			<p>Welcome, detect your location below or type it in to recieve the weather forecast</p>
-			<div class="box-container" id="detect-box-container">
-				<div id="detect-box">
-					<div id="detect-box-text">Detect your location</div>
-				</div>
+			<div class="box-container" id="detect-box-container" onclick="detect_geo_locate()">
+				<div id="detect-box-text">Detect your location</div>
 			</div>
 			<div class="box-container" id="manual-box-container">
-				<div id="manual-box">
-					<div id="manual-box-text">Input your city and country</div>
-					<input id="manual-box-input" autocomplete="off" tabindex="1" type="text">
-					<input id="manual-box-submit" type="button" onclick="call_API()" value="Go">
-				</div>
+				<input id="manual-box-input" autocomplete="off" tabindex="1" type="text" placeholder="City, Country">
+				<input id="manual-box-submit" type="button" onclick="parse_in()" value="Go">
 			</div>
-			<section class="weather-result">
-				<p id="location"></p>
-				<p id="main-weather"></p>
-				<p id="weather-desc"></p>
-				<p id="temp"></p>
+			<section id="weather-result"> 
 			</section>
 		</main>	
 		<footer>
