@@ -16,13 +16,15 @@ input.addEventListener("keyup", function(event) {
 function convert_unix_time(unix_time) {
   var a = new Date(unix_time * 1000);
   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   var year = a.getFullYear();
   var month = months[a.getMonth()];
+  var day = days[a.getDay()];
   var date = a.getDate();
   var hour = a.getHours();
   var min = a.getMinutes();
   var sec = a.getSeconds();
-  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + '0';
+  var time = day + ", " + date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + '0';
   return time;
 }
 
@@ -64,24 +66,35 @@ function call_API(url) {
 		.then((resp) => resp.json())
 		.then(function(data) {
 			console.log(data);
-			parentElement = document.getElementById('weather-result');
+
+			parentparentElement = document.getElementById('weather-result');
+
+			while (parentparentElement.firstChild) {
+				parentparentElement.removeChild(parentparentElement.firstChild);
+			}
+
 			var i;
 			var days_hours = 8; // 1 for the 3 hour forecast, 4 for the half-daily forecast, 8 for the daily forecast
+
 			for (i = 0; i < data.list.length; i = i + days_hours) {
 				//Creating elements
+				parentElement_c = document.createElement('div');
+				parentElement = parentparentElement.appendChild(parentElement_c);
+
+
 				var dt_ele = document.createElement('p');
 				var location_ele = document.createElement('p');
 				var main_weather_ele = document.createElement('p');
 				var weather_desc_ele = document.createElement('p');
 				var temp_ele = document.createElement('p');
-				var w_break = document.createElement('br');
+				//var w_break = document.createElement('br');
 
 				var dt_ele_app = parentElement.appendChild(dt_ele);
 				var location_ele_app = parentElement.appendChild(location_ele);
 				var main_weather_ele_app = parentElement.appendChild(main_weather_ele);
 				var weather_desc_ele_app = parentElement.appendChild(weather_desc_ele);
 				var temp_ele_app = parentElement.appendChild(temp_ele);
-				parentElement.appendChild(w_break);
+				//parentElement.appendChild(w_break);
 
 
 				//Adding the info to the html

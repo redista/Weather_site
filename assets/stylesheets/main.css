@@ -13,15 +13,14 @@ header {
   font-size: 60px;
 }
 
-body {
+main {
   background: #fcfcfc;
   font-family: sans-serif, Serif;
   font-size: 24px;
   text-align: center;
   margin-bottom: 150px;
-}
-
-main {
+  margin-left: 10%;
+  margin-right: 10%;
   margin-top: 50px;
 }
 
@@ -84,10 +83,22 @@ p {
 }
 
 #weather-result {
-  margin-left: 40%;
   text-align: left;
+  display: :inline-block;
 }
 
+#weather-result div {
+  display: inline-block;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+#weather-result div p:first-child {
+  font-size: 36px;
+  text-decoration: underline;
+}
 
 footer {
   background: #59514e;
